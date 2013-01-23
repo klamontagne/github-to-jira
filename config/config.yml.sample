@@ -1,0 +1,10 @@
+
+# github credentials and details
+# https://github.com/settings/applications
+github_oauth_token: <oauth token>
+github_issues_user: <repo>
+github_issues_repo: <user>
+
+# jira details
+jira_project: MyProject
+jira_project_key: MYPROJECT

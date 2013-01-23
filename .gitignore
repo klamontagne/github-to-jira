@@ -1,0 +1,4 @@
+vendor
+.bundle
+config/config.yml
+config/usermap.yml
