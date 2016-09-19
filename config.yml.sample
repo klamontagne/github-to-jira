@@ -1,0 +1,7 @@
+# Project key in JIRA
+jirakey: 'PRJT'
+# Organisation or user name eg. https://github.com/myorg/myrepo
+org: 'myorg'
+reponame: 'myrepo'
+# https://github.com/settings/tokens
+token: 'abcdef'

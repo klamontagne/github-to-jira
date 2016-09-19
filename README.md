@@ -10,17 +10,14 @@ https://confluence.atlassian.com/pages/viewpage.action?pageId=293830712
 Running
 -------
 
-Copy config/config.yml.sample to config/config.yml and update config/usermap.yml
+Copy config.yml.sample to config.yml
 
 ```bash
-bundle install
-rake generate_json
+bundle install --path=vendor/bundle
+bundle exec ruby g2j.rb
 ```
 
 TODO
 ----
 
 - Attachments
-- Open/Close History
-- Converting references to something Jira-friendly
-
