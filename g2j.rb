@@ -97,7 +97,13 @@ issues.each do |issue|
     info = if commit
       " ([#{commit[0,6]}|https://github.com/#{fullname}/commit/#{commit}])"
     else
-      nil
+      if event.event == 'referenced'
+        # Reference without commit refers to an external repo
+        ' (External repo)'
+      else
+        # Not a reference, no info
+        ''
+      end
     end
     issue_jira['comments'] << {
       "body" => "#{text}#{info}",
