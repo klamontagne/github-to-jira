@@ -1,4 +1,4 @@
-Github Issues to Jira via JSON
+Github Issues to JIRA via JSON
 ==============================
 
 JIRA now provides a JSON import facility that is vastly easier to use than the CSV one.

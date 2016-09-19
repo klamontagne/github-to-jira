@@ -11,6 +11,7 @@ jirakey = config['jirakey']
 org = config['org']
 reponame = config['reponame']
 token = config['token']
+import_state = config['state']
 # =======================
 
 logger = Logger.new(STDOUT)
@@ -29,8 +30,8 @@ client = Octokit::Client.new(access_token: token)
 client.auto_paginate = true
 repo = client.repo fullname
 
-logger.info "Enumerating all issues for #{fullname}"
-issues = client.list_issues fullname, state: 'open'
+logger.info "Enumerating #{import_state} issues for #{fullname}"
+issues = client.list_issues fullname, state: import_state
 output = []
 
 issues.each do |issue|

@@ -3,5 +3,7 @@ jirakey: 'PRJT'
 # Organisation or user name eg. https://github.com/myorg/myrepo
 org: 'myorg'
 reponame: 'myrepo'
+# Issue state to import: 'all', 'open', 'closed'
+state: 'all'
 # https://github.com/settings/tokens
 token: 'abcdef'
