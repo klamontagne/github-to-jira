@@ -5,5 +5,7 @@ org: 'myorg'
 reponame: 'myrepo'
 # Issue state to import: 'all', 'open', 'closed'
 state: 'all'
+# Include Pull Requests?
+include_pr: true
 # https://github.com/settings/tokens
 token: 'abcdef'

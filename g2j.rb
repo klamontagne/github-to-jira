@@ -12,6 +12,7 @@ org = config['org']
 reponame = config['reponame']
 token = config['token']
 import_state = config['state']
+include_pr = config['include_pr']
 # =======================
 
 logger = Logger.new(STDOUT)
@@ -40,6 +41,10 @@ issues = client.list_issues fullname, state: import_state
 output = []
 
 issues.each do |issue|
+
+  pr = issue.pull_request
+
+  next if !include_pr && pr
 
   next if min && max && !issue.number.between?(min.to_i, max.to_i)
 
@@ -71,7 +76,6 @@ issues.each do |issue|
   end
 
   # Pull request? Make a comment for it
-  pr = issue.pull_request
   if pr
 
     issue.labels << 'Pull-Request'
