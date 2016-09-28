@@ -73,6 +73,9 @@ issues.each do |issue|
   # Pull request? Make a comment for it
   pr = issue.pull_request
   if pr
+
+    issue.labels << 'Pull-Request'
+
     pr_info = client.pull_request fullname, issue.number
     issue_jira['comments'] << {
       "body" => "Branch: #{pr_info.head.label}",
