@@ -17,6 +17,14 @@ bundle install --path=vendor/bundle
 bundle exec ruby g2j.rb
 ```
 
+If you have a lot of issues (this tool makes at least 2 requests per issue), You can set a range of issue numbers to work around the GitHub API rate limit (< 5000 req/hour).
+
+```bash
+bundle exec ruby g2j.rb 1 1000
+bundle exec ruby g2j.rb 1001 2000
+etc.
+```
+
 TODO
 ----
 

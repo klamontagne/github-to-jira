@@ -16,6 +16,10 @@ import_state = config['state']
 
 logger = Logger.new(STDOUT)
 
+# Accept a range of issue# (to bypass rate-limiting)
+min = ARGF.argv[0]
+max = ARGF.argv[1]
+
 def jira_date(d)
   DateTime.parse(d.to_s).strftime('%Y-%m-%dT%H:%m:%S+00:00')
 end
@@ -36,6 +40,9 @@ issues = client.list_issues fullname, state: import_state
 output = []
 
 issues.each do |issue|
+
+  next if min && max && !issue.number.between?(min.to_i, max.to_i)
+
   logger.debug "Fetching #{issue.state} issue ##{issue.number} #{issue.title}"
   issue_jira = {
     "key" => "#{jirakey}-#{issue.number}",
