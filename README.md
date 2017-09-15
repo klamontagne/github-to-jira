@@ -10,8 +10,9 @@ https://confluence.atlassian.com/pages/viewpage.action?pageId=293830712
 Running
 -------
 
-Copy config.yml.sample to config.yml
+Copy `config.yml.sample` to `config.yml` and edit the configuration to suit your needs.
 
+Run the importer:
 ```bash
 bundle install --path=vendor/bundle
 bundle exec ruby g2j.rb
